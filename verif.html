@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification</title>
+    <link href="verif.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="logopage2-removebg-preview.png">
+
+</head>
+<body>
+    <div class="verification-container">
+        <div class="verification-form">
+            <h1>Enter Verification Code</h1>
+            <form id="verification-form" action="verif.html" method="POST">
+                <div class="verification-row">
+                    <input type="text" id="verificationCode" placeholder="Verification Code" required>
+                </div>
+                <div class="verification-row">
+                    <button type="submit">Verify</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="verification.js"></script>
+</body>
+</html>

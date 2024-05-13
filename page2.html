@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+    <link rel="stylesheet" href="page2.css">
+    <link rel="icon" type="image/x-icon" href="logopage2-removebg-preview.png">
+</head>
+<body>
+    <div class="background"></div>
+    <div class='loginpage'>
+        <form class='loginForm'>
+            <img src="logopage.png" alt="Logo" class="logo">
+            <h1>Login</h1>
+            <div class="input-box">
+                <input type="email" name="email" id="email" placeholder="E-mail" required class="input-box" />
+                <span class='icon'><i class='fas fa-user'></i></span>
+            </div>
+            <div class='input-box'>
+                <input type="password" id="password" placeholder='Password' />
+                <label for="showPassword" class="icon"><i class="fas fa-eye"></i></label>
+            </div>
+            <div class="remember-forget">
+                <label><input type="checkbox"/> Remember me?</label>
+                <a href="passwrd.html" class="forgot-password-link">Forgot Password</a>
+            </div>
+            <input class='button' type="submit" value="Connect" />
+            <div class="register-link">
+                <p>Don't have an account? <a href="signUp.html">Sign up</a></p>
+            </div>
+        </form>
+    </div>
+
+    <div class="forgot-password-container hidden">
+        <div class="container">
+            <h1>Récupération de mot de passe</h1>
+            <form id="password-recovery-form">
+                <div class="form-group">
+                    <label for="email">Adresse e-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <button type="submit" class="btn">Envoyer le code</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="page2.js"></script>
+</body>
+</html>

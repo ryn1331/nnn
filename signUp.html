@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="signUp.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="logopage2-removebg-preview.png">
+</head>
+<body>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <span class="material-symbols-outlined">
+            menu
+        </span>
+    </div>
+    <div class="menu-content" id="menu">
+        <a href="#">
+            User Name
+            <span class="material-symbols-outlined" style="margin-left: 20px; color: rgb(47, 47, 47);">
+                account_circle
+            </span>
+        </a>
+        <a href="#">Tournament</a>
+        <a href="#">Services</a>
+        <a href="#">Academy</a>
+        <a href="#">Contact Us</a>
+        <a href="#" style="color: rgb(147, 0, 0);">
+            Logout
+            <span class="material-symbols-outlined" style="margin-left:50px; margin-bottom: -20px;">
+                logout
+            </span>
+        </a>
+    </div>
+    <div class="main-container">
+        <div class="signup-form">
+            <form id="signup-form" class="sign-back"  action="html (1).html">
+                <h1>Sign UP</h1>
+                <div class="signup-row">
+                    <i class="fa fa-user"></i>
+                    <input type="text" placeholder="FULL NAME" id="user" required>
+                </div>
+                <div class="signup-row">
+                    <i class="fa fa-envelope-o"></i>
+                    <input type="text" placeholder="EMAIL" id="email" required>
+                </div>
+                <div class="signup-row">
+                    <i class="fa fa-phone"></i>
+                    <input type="text" placeholder="MOBILE" id="mobile" required>
+                </div>
+                <div class="signup-row">
+                    <i class="fa fa-key"></i>
+                    <input type="password" placeholder="PASSWORD" id="password" required>
+                </div>
+                <div class="signup-row">
+                    <button type="submit">
+                        <i class="fa fa-arrow-circle-o-right"></i>
+                    </button>
+                </div>
+                <div class="form-bottom">
+                    <div class="remember">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Remember Me</label>
+                    </div>
+                    <div class="remember">
+                        <a href="#">Already Have Account?</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+  
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="page.js"></script>
+    <script>
+        function confirmLogin(){
+            var user = document.getElementById('user').value;
+            var email = document.getElementById('email').value;
+            var mobile = document.getElementById('mobile').value;
+            var password = document.getElementById('password').value;
+            if(user && email && password.length >= 8){
+                window.location.href = 'html(1).html';
+            }else{
+                alert('Please fill in all the fields.');
+            }
+            if(password.length < 8){
+                alert('Password must contain at least 8 characters.');
+                return;
+            }
+        }
+    </script>
+    
+</body>
+</html>

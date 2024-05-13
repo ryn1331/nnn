@@ -1,0 +1,181 @@
+body {
+  margin-top: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url(img_black_green_bold.png);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+.menu-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: -30px;
+  margin-top: -80px;
+  cursor: pointer;
+  z-index: 1000;
+  color: beige;
+}
+.menu-content {
+  display: none;
+  position: absolute;
+  background-image: url(photo_2024-03-23_14-57-51.jpg);
+  background-color: rgba(0, 0, 0, 0.2);
+  background-size: cover;
+  border-radius: 10px;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+  left: 20px;
+  top: 60px;
+  margin-top: -100px;
+  margin-left: -20px;
+}
+.menu-content a {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  color: rgb(1, 200, 1);
+}
+.menu-content a:hover {
+  background-color: #ffffff;
+  border-radius: 15px;
+}
+.logo {
+  position: absolute;
+  top: -100px;
+  right: -10px;
+  background-image: url(img_rayane_1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 70px;
+  height: 70px;
+  margin-right: 0;
+}
+.triangle {
+  background-image: linear-gradient(gray, rgb(50, 50, 50), rgb(0, 0, 0));
+  padding: 20px;
+  border-radius: 10px;
+  width: 40%;
+  height: 370px;
+  /* margin-top: 50px; */
+  overflow-y: scroll;
+  /* scrollbar-width: thin; */
+}
+.triangle::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 10px;
+  background-color: rgb(152, 152, 152);
+}
+.triangle::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgb(58, 62, 58);
+}
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 10px;
+  background-color: rgb(198, 196, 196);
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgb(59, 59, 59);
+}
+.stadium {
+  position: relative;
+
+  background-image: linear-gradient(to bottom right, rgb(56, 56, 56) 40%, rgb(98, 98, 98) 30%);
+  color: #fff;
+  padding: 20px;
+  margin-left: -10px;
+  border-radius: 10px;
+  width: 80%;
+  margin-top: 14px;
+  /* right: 50px; */
+}
+.more-details {
+  color: rgb(28, 27, 27);
+  padding: 5px 10px;
+  text-decoration: none;
+  display: inline;
+  margin-top: 20px;
+  margin-left: 59px;
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 768px) {
+  body {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      height: auto;
+      margin-top: 50px;
+  }
+  .triangle {
+
+/* Mohammed Bouzar, [29/04/2024 21:44] */
+width: 80%;
+      height: auto;
+      max-height: 300px;
+      margin-top: 20px;
+  }
+  .stadium {
+      width: 100%;
+      margin-left: 0;
+  }
+  .more-details {
+      margin-left: 20px;
+  }
+  .logo {
+      position: static;
+      margin: 20px auto;
+  }
+  .menu-content {
+      left: 10px;
+      top: 50px;
+      margin-top: 0;
+      margin-left: 0;
+  }
+}
+
+
+
+
+.add{
+  font-size: 20px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background: green;
+    border-radius: 10px;
+    scale: 0.9;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.add:active{
+  scale:  1;
+}
+
+.stadium .sub{
+  position: absolute;
+  right: 1.3rem;
+  top: 35%;
+  border: 1px solid grey;
+  padding: 5px 12px;
+  color: red;
+  border-radius: 3px;
+  scale: 0.9;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.stadium .sub:active{
+  scale: 1;
+}

@@ -1,0 +1,170 @@
+html {
+    height: 100vh;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background: url("img_black_green_bold.png");
+    background-size: cover;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.main-container {
+    width: 500px;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.signup-form {
+    background: url("img_black_green_bold.png") no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.sign-back {
+    background: linear-gradient(to bottom right, #666666, #000000);
+    border-radius: 10px;
+    padding: 65px 0;
+}
+
+.sign-back h1 {
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    margin-top: 0;
+    letter-spacing: 5px;
+    text-shadow: 1px 1px 1px #333;
+}
+
+.form-bottom {
+    display: flex;
+    justify-content: center;
+}
+
+.remember:not(:last-child) {
+    margin-right: 30px;
+    color: #238B12;
+}
+
+.remember:not(:last-child):hover {
+    margin-right: 30px;
+    color: #fff;
+    transition: all 500ms;
+}
+
+.remember a {
+    text-decoration: none;
+    color: #238B12;
+    transition: all 500ms;
+}
+
+.remember a:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+input[type="checkbox"] {
+    position: relative;
+    top: 1px;
+    transition: all 500ms;
+}
+
+.main-forms {
+    overflow: hidden;
+    display: none;
+    position: relative;
+}
+
+.signup-row {
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+}
+
+.signup-row input {
+    padding: 5px 0;
+    border: 0;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    width: 50%;
+    text-align: center;
+    outline: none;
+    color: #fff;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.signup-row input::-webkit-input-placeholder {
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(51, 51, 51, 0.6)
+}
+
+.signup-row i {
+    color: #fff;
+    position: relative;
+    left: 20px;
+    text-shadow: 1px 1px 1px rgba(51, 51, 51, 0.6)
+}
+
+.signup-row a {
+    font-size: 40px;
+    text-decoration: none;
+}
+
+.signup-row a i {
+    left: 0;
+}
+
+/* Styles pour le bouton de sign up */
+.signup-row button[type="submit"] {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.signup-row button[type="submit"] i {
+    font-size: 40px;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(51, 51, 51, 0.6);
+}
+.menu-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: -30px;
+    margin-top: -80px;
+    cursor: pointer;
+    z-index: 1000;
+    color: beige;
+}
+.menu-content {
+    display: none;
+    position: absolute;
+    background-image: url(photo_2024-03-23_14-57-51.jpg);
+    background-color: rgba(0, 0, 0, 0.2);
+    background-size: cover;
+    border-radius: 10px;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    left: 20px;
+    top: 60px;
+    margin-top: -100px;
+    margin-left: -20px;
+}
+.menu-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    color: rgb(1, 200, 1);
+}
+.menu-content a:hover {
+    background-color: #ffffff;
+    border-radius: 15px;
+}

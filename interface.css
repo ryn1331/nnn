@@ -1,0 +1,71 @@
+html {
+    height: 100vh;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background: url("img_black_green_bold.png");
+    background-size: cover;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.main-container {
+    width: 500px;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Styles pour le logo */
+.logo {
+    position: fixed;
+    top: 10px; /* Distance du haut de la page */
+    left: 40px; /* Distance de la gauche de la page */
+    width: 60px; /* Largeur du logo */
+    height: auto; /* Hauteur automatique pour maintenir les proportions */
+    z-index: 999; /* Assurez-vous que le logo est au-dessus du fond d'écran */
+}
+
+/* Styles pour le texte */
+.text-container {
+    position: fixed;
+    top: 50%; /* Centrer verticalement */
+    left: 60px; /* Ajustez la distance de la gauche de la page */
+    transform: translateY(-50%); /* Centrer verticalement */
+}
+
+.text {
+    color: white; /* Couleur du texte */
+    font-size: 60px; /* Taille du texte */
+    margin: 5px 0; /* Marge entre chaque ligne de texte */
+}
+
+/* Styles pour le rectangle bouton */
+.button {
+    position: fixed;
+    top: 80%; /* Ajustez la position verticale du rectangle bouton */
+    left: 150px; /* Ajustez la position horizontale du rectangle bouton */
+    background-color: #33d419; /* Couleur de fond du rectangle bouton */
+    padding: 10px 30px; /* Espace à l'intérieur du rectangle bouton */
+    border-radius: 20px; /* Bord arrondi du rectangle bouton */
+    cursor: pointer; /* Curseur de souris en forme de main au survol */
+}
+
+
+.button-text {
+    color: white; /* Couleur du texte */
+    font-size: 24px; /* Taille du texte */
+    text-align: center; /* Alignement du texte au centre */
+    margin: 0; /* Supprime les marges par défaut */
+    line-height: 1; /* Hauteur de ligne pour centrer verticalement */
+}
+
+.button {
+   
+    text-decoration: none;
+
+}

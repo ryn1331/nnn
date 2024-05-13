@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background 3</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles pour la fenêtre contextuelle */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(45deg, #000000, #333333);
+            color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            z-index: 9999;
+        }
+        .close {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            cursor: pointer;
+            color: white;
+        }
+        .image-input {
+            margin-bottom: 10px;
+        }
+        input[type="text"] {
+            background-color: #222222;
+            color: white;
+            border: none;
+            padding: 5px;
+            border-radius: 3px;
+            margin-bottom: 10px;
+        }
+        button[type="submit"] {
+            background-color: #00FF00;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+        .triangle {
+  width: 70%;
+  box-sizing: border-box;
+}
+    </style>
+</head>
+<body>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <span class="material-symbols-outlined">
+            menu
+        </span>
+    </div>
+    <div class="menu-content" id="menu">
+        <a href="#">
+            User Name
+            <span class="material-symbols-outlined" style="margin-left: 20px; color: rgb(47, 47, 47);">
+                account_circle
+            </span>
+        </a>
+        <a href="#">Tournament</a>
+        <a href="table.html">Services</a>
+        <a href="#">Academy</a>
+        <a href="#">Contact Us</a>
+        <a href="#" style="color: rgb(147, 0, 0);">
+            Logout
+            <span class="material-symbols-outlined" style="margin-left:50px; margin-bottom: -20px;">
+                logout
+            </span>
+        </a>
+    </div>
+    
+    <div class="logo"></div>
+    <div class="triangle"> <!-- Déplacer la classe triangle ici -->
+        <div class="triangle">
+            <div class=" add" onclick="showPopup()"> <p>Add</p> <span class="icon-plus"></span></div>
+            <!-- Contenu des stades existants -->
+            <div class="stadium">
+                <h2>Stadium 1</h2>
+                <a href="stadium1.html" class="more-details" style="font-size: 12px; margin-left: 90px;">More details
+                    <span class="material-symbols-outlined" style="width: 1px;">
+                        navigate_next
+                    </span>
+                </a>
+                <span class="icon-minus sub"></span>
+    
+            </div>
+            <div class="stadium">
+                <h2>Stadium 2</h2>
+                <a href="stadium2.html" class="more-details" style="font-size: 12px; margin-left: 90px;">More details
+                    <span class="material-symbols-outlined" style="width: 1px;">
+                        navigate_next
+                    </span>
+                </a>
+    
+                <span class="icon-minus sub"></span>
+            </div>
+            <div class="stadium">
+                <h2>Stadium 3</h2>
+                <a href="stadium3.html" class="more-details" style="font-size: 12px; margin-left: 90px;">More details
+                    <span class="material-symbols-outlined" style="width: 1px;">
+                        navigate_next
+                    </span>
+                </a>
+                <span class="icon-minus sub"></span>
+    
+            </div>
+            <div class="stadium">
+                <h2>Stadium 4</h2>
+                <a href="stadium4.html" class="more-details" style="font-size: 12px; margin-left: 90px;">More details
+                    <span class="material-symbols-outlined" style="width: 1px;">
+                        navigate_next
+                    </span>
+                </a>
+                <span class="icon-minus sub"></span>
+    
+            </div>
+            <div class="stadium">
+                <h2>Stadium 5</h2>
+                <a href="stadium5.html" class="more-details" style="font-size: 12px; margin-left: 90px;">More details
+                <span class="material-symbols-outlined" style="width: 1px;">
+                    navigate_next
+                </a>
+                <span class="icon-minus sub"></span>
+    
+        </div>
+        <div class="stadium">
+            <h2>Stadium 6</h2><a href="stadium6.html" class="more-details" style="font-size: 12px; margin-left: 90px;">More details
+                <span class="material-symbols-outlined" style="width: 1px;">
+                    navigate_next
+                </a>
+                <span class="icon-minus sub"></span>
+    
+        </div>
+        <div class="stadium">
+            <h2>Stadium 7</h2><a href="stadium7.html" class="more-details" style="font-size: 12px; margin-left: 90px;">More details
+                <span class="material-symbols-outlined" style="width: 1px;">
+                    navigate_next
+                </a>
+                <span class="icon-minus sub"></span>
+    
+        </div>
+       
+    <!-- Fenêtre contextuelle pour ajouter un nouveau stade -->
+    <div class="popup" id="popup">
+        <span class="close" onclick="hidePopup()">X</span>
+        <h2>Ajouter un nouveau stade</h2>
+        <form>
+            <label for="stadiumName">Nom du stade:</label><br>
+            <input type="text" id="stadiumName" name="stadiumName"><br><br>
+            <label for="stadiumPhotoURL">URL de la photo:</label><br>
+            <input type="text" id="stadiumPhotoURL" name="stadiumPhotoURL"><br><br>
+            <button type="submit">Ajouter</button>
+        </form>
+    </div>
+
+    <script>
+        // Fonction pour afficher la fenêtre contextuelle
+        function showPopup() {
+            var popup = document.getElementById("popup");
+            popup.style.display = "block";
+        }
+
+        // Fonction pour masquer la fenêtre contextuelle
+        function hidePopup() {
+            var popup = document.getElementById("popup");
+            popup.style.display = "none";
+        }
+
+        // Fonction pour afficher/masquer le menu
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.display === "none") {
+                menu.style.display = "block";
+            } else {
+                menu.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

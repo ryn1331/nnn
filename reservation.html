@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar23</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        body {
+            margin-top: 100px;
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: url(img_black_green_bold.png);
+            background-size: cover;
+            height: 170vh;
+            position: relative;
+            display: flex;
+            justify-content: space-around; /* Pour aligner les deux conteneurs sur une même ligne */
+        }
+        .menu-icon{
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: -30px;
+            margin-top: -80px;
+            cursor: pointer;
+            z-index: 1000;
+            color: beige;
+        }
+        .menu-content{
+            display: none;
+            position: absolute;
+            background-image: url(c:\html\logopage.png);
+            background-color: rgba(0, 0, 0, 0.2);
+            background-size: cover;
+            border-radius: 10px;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            padding: 12px 16px;
+            z-index: 1;
+            left: 20px;
+            top: 60px;
+            margin-top: -100px;
+            margin-left: -20px;
+        }
+        .menu-content a{
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            color: rgb(1, 200, 1);
+        }
+        .menu-content a:hover{
+            background-color: #ffffff;
+            border-radius: 15px;
+        }
+        .logo{
+            position: absolute;
+            top: -100px;
+            right: -10px;
+            background-image: url(logo.jpg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 70px;
+            height: 70px;
+            margin-right: 0;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .calendar {
+          height: 200vh;
+            margin-bottom: -130px; /* Ajustement de la marge basse */
+            width: 100%; /* Augmentation de la largeur */
+        }
+        .menu-sup {
+            width: 30%; /* Réduction de la largeur */
+            margin-left: -50px; /* Décalage vers la gauche */
+        }
+        
+        .schedule{
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            grid-gap: 1px;
+            background-color: black;
+            padding: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(208, 208, 208);
+            text-align: center;
+            margin-bottom: 350px;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+        .schedule button{
+            height: 4px;
+            width: 50px;
+            border-radius: 5px;
+            padding: 10px;
+            margin-right: 10px;
+            margin-top: 1px;
+            border: none;
+            cursor: pointer;
+        }
+        .schedule button:hover{
+          opacity: 0.8;
+        }
+        .red{
+            background-color: red;
+        }
+        .green{
+            background-color: green;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+        .trianglei{
+            background-image: linear-gradient(gray,rgb(50, 50, 50),rgb(0, 0, 0));
+            padding: 20px;
+            border-radius: 10px;
+            width: 390px;
+            height: 300px;
+            margin-top: 0px;
+            overflow-y: scroll;  
+        }
+        .trianglei::-webkit-scrollbar{
+            width: 10px;
+            border-radius: 10px;
+            background-color: rgb(152, 152, 152);
+        }
+        .trianglei::-webkit-scrollbar-thumb{
+            border-radius: 10px;
+            background:  rgb(58, 62, 58);
+        }
+  .menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    color: white;
+  }
+  .quantity-control {
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+  }
+  .quantity-control button {
+    padding: 5px 10px;
+    border-radius: 15px;
+    background-color: rgb(31, 31, 31);
+    color: rgb(173, 173, 173);
+  }
+  .quantity-control input {
+    width: 30px;
+    text-align: center;
+    margin: 0 12px;
+    border-radius: 5px;
+    background-color: rgb(31, 31, 31);
+    color: rgb(173, 173, 173);
+  }
+  #total-price {
+    margin-top: 20px;
+  }
+  #menu-h{
+    color: white;
+    text-align: center;
+    margin-block-end: 30px;
+  }
+    </style>
+</head>
+<body>
+  <div class="menu-icon" onclick="toggleMenu()">
+    <span class="material-symbols-outlined">
+        menu
+    </span></div>
+    <div class="menu-content" id="menu">
+        <a href="#">    
+            User Name
+            <span class="material-symbols-outlined" style="margin-left: 20px; color: rgb(47, 47, 47);">
+                account
+                </span>
+        </a>
+        <a href="#">Tournament</a>
+        <a href="#">Services</a>
+        <a href="#">Academy</a>
+        <a href="#">Contact Us</a>
+        <a href="#" style="color: rgb(147, 0, 0);"> Logout
+            <span class="material-symbols-outlined" style="margin-left:50px; margin-bottom: -20px;">
+                logout
+                </span>
+        </a>
+    </div>
+        <div class="logo"></div>
+        <div class="container">
+            <div class="calendar">
+   <div class="schedule">
+    <div></div>
+    <div style="margin-bottom: 10px;">Sat<br>27/4</div>
+    <div>Sun<br>28/4</div>
+    <div>Mon<br>29/4</div>
+    <div>Tue<br>30/4</div>
+    <div>Wed<br>01/5</div>
+    <div>Thur<br>02/5</div>
+    <div>08:00</div>
+    <button class="red" onclick="showReservedMessage(this, '08:00', 'Sat 27/4')"></button>
+    <button class="yellow" onclick="showReservedMessage(this, '08:00', 'Sun 28/4')"></button>
+    <button class="green" onclick="showConfirmPrompt(this, '08:00', 'Mon 29/4')"></button>
+    <button class="green" onclick="showConfirmPrompt(this, '08:00', 'Tue 30/4')"></button>
+    <button class="yellow" onclick="showReservedMessage(this, '08:00', 'Wed 01/5')"></button>
+    <button class="red" onclick="showReservedMessage(this, '08:00', 'Thur 02/5')"></button>
+    <div>09:00</div>
+    <button class="red" onclick="showReservedMessage(this, '09:00', 'Sat 27/4')"></button>
+    <button class="yellow" onclick="showReservedMessage(this, '09:00', 'Sun 28/4')"></button>
+    <button class="green" onclick="showConfirmPrompt(this, '09:00', 'Mon 29/4')"></button>
+    <button class="green" onclick="showConfirmPrompt(this, '09:00', 'Tue 30/4')"></button>
+    <button class="yellow" onclick="showReservedMessage(this, '09:00', 'Wed 01/5')"></button>
+    <button class="red" onclick="showReservedMessage(this, '09:00', 'Thur 02/5')"></button>
+    <div>10:00</div>
+    <button class="red" onclick="showReservedMessage(this, '10:00', 'Sat 27/4')"></button>
+    <button class="yellow" onclick="showReservedMessage(this, '10:00', 'Sun 28/4')"></button>
+    <button class="green" onclick="showConfirmPrompt(this, '10:00', 'Mon 29/4')"></button>
+    <button class="green" onclick="showConfirmPrompt(this, '10:00', 'Tue 30/4')"></button>
+    <button class="yellow" onclick="showReservedMessage(this, '10:00', 'Wed 01/5')"></button>
+    <button class="red" onclick="showReservedMessage(this, '10:00', 'Thur 02/5')"></button>
+    <div>11:00</div>
+    <button class="red" onclick="showReservedMessage(this, '11:00', 'Sat 27/4')"></button>
+    <button class="yellow" onclick="showReservedMessage(this, '11:00', 'Sun 28/4')"></button>
+    <button class="green" onclick="showConfirmPrompt(this, '11:00', 'Mon 29/4')"></button>
+    <button class="green" onclick="showConfirmPrompt(this, '11:00', 'Tue 30/4')"></button>
+    <button class="yellow" onclick="showReservedMessage(this, '11:00', 'Wed 01/5')"></button>
+    <button class="red" onclick="showReservedMessage(this, '11:00', 'Thur 02/5')"></button>
+    <div>16:00</div>
+    <button class="red" onclick="showReservedMessage(this, '16:00', 'Sat 27/4')"></button>
+    <button class="yellow" onclick="showReservedMessage(this, '16:00', 'Sun 28/4')"></button>
+    <button class="green" onclick="showConfirmPrompt(this, '16:00', 'Mon 29/4')"></button>
+    <button class="green" onclick="showConfirmPrompt(this, '16:00', 'Tue 30/4')"></button>
+    <button class="yellow" onclick="showReservedMessage(this, '16:00', 'Wed 01/5')"></button>
+    <button class="red" onclick="showReservedMessage(this, '16:00', 'Thur 02/5')"></button>
+    <div>17:00</div>
+    <button class="red" onclick="showReservedMessage(this, '17:00', 'Sat 27/4')"></button>
+    <button class="yellow" onclick="showReservedMessage(this, '17:00', 'Sun 28/4')"></button>
+    <button class="green" onclick="showConfirmPrompt(this, '17:00', 'Mon 29/4')"></button>
+    <button class="green" onclick="showConfirmPrompt(this, '17:00', 'Tue 30/4')"></button>
+    <button class="yellow" onclick="showReservedMessage(this, '17:00', 'Wed 01/5')"></button>
+    <button class="red" onclick="showReservedMessage(this, '17:00', 'Thur 02/5')"></button>
+    <div>18:00</div>
+    <button class="red" onclick="showReservedMessage(this, '18:00', 'Sat 27/4')"></button>
+    <button class="yellow" onclick="showReservedMessage(this, '18:00', 'Sun 28/4')"></button>
+    <button class="green" onclick="showConfirmPrompt(this, '18:00', 'Mon 29/4')"></button>
+    <button class="green" onclick="showConfirmPrompt(this, '18:00', 'Tue 30/4')"></button>
+    <button class="yellow" onclick="showReservedMessage(this, '18:00', 'Wed 01/5')"></button>
+    <button class="red" onclick="showReservedMessage(this, '18:00', 'Thur 02/5')"></button>
+    <div>19:00</div>
+    <button class="red" onclick="showReservedMessage(this, '19:00', 'Sat 27/4')"></button>
+    <button class="yellow" onclick="showReservedMessage(this, '19:00', 'Sun 28/4')"></button>
+    <button class="green" onclick="showConfirmPrompt(this, '19:00', 'Mon 29/4')"></button>
+    <button class="green" onclick="showConfirmPrompt(this, '19:00', 'Tue 30/4')"></button>
+    <button class="yellow" onclick="showReservedMessage(this, '19:00', 'Wed 01/5')"></button>
+    <button class="red" onclick="showReservedMessage(this, '19:00', 'Thur 02/5')"></button>
+    </div>
+</div>
+</div>
+    <div class="menu-sup">
+      <div class="trianglei">
+        <h2 id="menu-h">Supplements to add</h2>
+        <div class="logo"></div>
+        <div class="menu-item">
+          <span>SOCCER BALL - 200 DA</span>
+          <div class="quantity-control">
+            <button onclick="updateQuantity('soccerball', -1)">-</button>
+            <input type="number" id="soccerball-quantity" value="0" readonly>
+            <button onclick="updateQuantity('soccerball', 1)">+</button>
+          </div>
+        </div>
+        <div class="menu-item">
+            <span>T-SHIRTS - 100 DA</span>
+            <div class="quantity-control">
+              <button onclick="updateQuantity('tshirts', -1)">-</button>
+              <input type="number" id="tshirts-quantity" value="0" readonly>
+              <button onclick="updateQuantity('tshirts', 1)">+</button>
+            </div>
+          </div>
+          <div class="menu-item">
+            <span>BOTTLE OF WATER - 30 DA</span>
+            <div class="quantity-control">
+              <button onclick="updateQuantity('bow', -1)">-</button>
+              <input type="number" id="bow-quantity" value="0" readonly>
+              <button onclick="updateQuantity('bow', 1)">+</button>
+            </div>
+          </div>
+          <div class="menu-item">
+            <span>REFEREE - 200 DA</span>
+            <div class="quantity-control">
+              <button onclick="updateQuantity('ref', -1)">-</button>
+              <input type="number" id="ref-quantity" value="0" readonly>
+              <button onclick="updateQuantity('ref', 1)">+</button>
+            </div>
+          </div>
+          <div class="menu-item">
+            <span>BATHROOM - 200 DA</span>
+            <div class="quantity-control">
+              <button onclick="updateQuantity('bath', -1)">-</button>
+              <input type="number" id="bath-quantity" value="0" readonly>
+              <button onclick="updateQuantity('bath', 1)">+</button>
+            </div>
+          </div>
+        <div id="total-price" style="color: rgb(255, 204, 1);">TOTAL PRICE : 3000 DA</div>
+        <button id="confirm-order" onclick="confirmOrder()" style="border-radius: 10px; margin-top: 35px; background-color: rgb(5, 140, 3); color: beige; width: 80px;height: 25px;">Confirm</button>
+        </div>
+        <script>
+          var prices = {
+            soccerball: 200, tshirts: 100,
+            bow: 30, ref: 200, bath:200
+          };
+          var quantities = {
+            soccerball: 0, tshirts: 0,
+            bow: 0, ref: 0, bath:0
+          };
+        
+          function updateQuantity(item, change) {
+            if((item=='soccerball'||item=='ref'||
+            item=='tshirts'||item=='bath')
+            &&quantities[item]==1&&change>0){
+              return;
+            }
+            var newQuantity = quantities[item] + change;
+            if (newQuantity >= 0) {
+              quantities[item] = newQuantity;
+              document.getElementById(item + '-quantity').value = newQuantity;
+              updateTotalPrice();
+            }
+          }
+        
+          function updateTotalPrice() {
+            var totalPrice = 3000;
+            for (var item in quantities) {
+              totalPrice += quantities[item] * prices[item];
+            }
+            document.getElementById('total-price').textContent = 'TOTAL PRICE : ' + totalPrice + ' DA';  }
+          function confirmOrder(){
+            var totalPrice = 3000;
+            for(var item in quantities){
+                totalPrice += quantities[item]*prices[item];
+            }
+            alert('Your total order price is : ' + totalPrice + ' DA');
+          }
+        </script>
+        <script>
+          function toggleMenu(){
+            var menu = document.getElementById("menu");
+                if(menu.style.display === "none"){
+                    menu.style.display = "block";
+                }else{
+                    menu.style.display = "none";
+                }
+        }
+        function showReservedMessage(button, time, day){
+          alert('This time (${time} on ${day}) is reserved.');
+        }
+        function showConfirmPrompt(button, time, day){
+          if(confirm('Are you sure you want to reserve ${time} on {day}?')){
+            button.className = "red";
+            alert("Reservation confirmed!");
+          }
+        }
+        </script>
+</body>
+</ht

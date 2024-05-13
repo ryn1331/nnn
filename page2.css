@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+html {
+    height: 100vh;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background: url("img_black_green_bold.png");
+    background-size: cover;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.main-container {
+    width: 500px;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.loginForm {
+    width: 300px;
+    height: 400px;
+    background: linear-gradient(to bottom right, #666666, #000000);
+    color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 50px;
+}
+
+
+.loginForm h1 {
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 10px; 
+    margin-top: -10px; 
+}
+
+.input-box {
+    margin-bottom: 20px;
+}
+
+
+
+.input-box input {
+    width: 90%;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 16px;
+    padding: 0 15px;
+}
+
+.input-box input::placeholder {
+    color: #fff;
+}
+
+.input-box .icon {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    color: #fff;
+}
+
+.button {
+    width: 90%;
+    height: 40px;
+    background-color:#238B12;
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.remember-forget a {
+    color: #238B12;
+    text-decoration: none;
+}
+
+.register-link a {
+    color: #238B12;
+    text-decoration: none;
+}
+
+.logo {
+    display: block;
+    margin: 0 auto;
+    width: 90px;
+    height: 90px;
+}
+
+.logo.center {
+    display: block;
+    margin: 0 auto;
+    width: 90px;
+    height: 90px;
+    position: relative;
+    top: 10%;
+}
+.forgot-password-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.forgot-password-container.hidden {
+    display: none;
+}
